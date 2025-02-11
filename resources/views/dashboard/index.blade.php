@@ -1,8 +1,6 @@
 @extends('layout.app')
 
 @section('konten')
-    <main id="main" class="main" style="margin-left: 250px; padding: 20px;">
-        <div class="container-fluid" style="margin-top: 50px">
             <div class="table-responsive">
                 <table class="table table-striped table-bordered">
                     <thead class="table-dark">
@@ -72,8 +70,6 @@
                     <i class="fas fa-file-excel"></i> Export ke Excel
                 </a>
             </div>
-        </div>
-    </main>
     <style>
         @media (max-width: 768px) {
             #main {
@@ -84,3 +80,4 @@
         }
     </style>
 @endsection
+
