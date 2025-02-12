@@ -5,35 +5,36 @@
 <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
     <!-- Sidebar Start -->
-    <aside class="left-sidebar">
-        <div>
-            <div class="brand-logo d-flex align-items-center justify-content-between">
-                <a href="{{ url('/') }}" class="text-nowrap logo-img">
-                    <img src="{{ asset('assets/images/logo.png') }}" width="180" alt="" />
-                </a>
-                <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
-                    <i class="ti ti-x fs-8"></i>
-                </div>
-            </div>
-            <!-- Sidebar navigation-->
-            <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
-                <ul id="sidebarnav">
-                    <li class="sidebar-item mt-3">
-                        <a class="sidebar-link" href="{{ url('/dashboard') }}" aria-expanded="false">
-                            <span><i class="ti ti-layout-dashboard"></i></span>
-                            <span class="hide-menu">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ url('/kuisioner')}}" aria-expanded="false">
-                            <span><i class="ti ti-list"></i></span>
-                            <span class="hide-menu">Kuisioner Laporan</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </aside>
+    <aside class="left-sidebar" style="background-color: #2c3e50;"> <!-- Ganti warna sesuai kebutuhan -->
+      <div>
+          <div class="brand-logo d-flex align-items-center justify-content-between">
+              <a href="{{ url('/') }}" class="text-nowrap logo-img">
+                  <img src="{{ asset('assets/images/logo.png') }}" width="180" alt="" />
+              </a>
+              <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                  <i class="ti ti-x fs-8" style="color: white;"></i>
+              </div>
+          </div>
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+              <ul id="sidebarnav">
+                  <li class="sidebar-item mt-3">
+                      <a class="sidebar-link" href="{{ url('/dashboard') }}" aria-expanded="false" style="color: white;">
+                          <span><i class="ti ti-layout-dashboard" style="color: white;"></i></span>
+                          <span class="hide-menu">Dashboard</span>
+                      </a>
+                  </li>
+                  <li class="sidebar-item">
+                      <a class="sidebar-link" href="{{ url('/kuisioner')}}" aria-expanded="false" style="color: white;">
+                          <span><i class="ti ti-list" style="color: white;"></i></span>
+                          <span class="hide-menu">Kuisioner Laporan</span>
+                      </a>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+  </aside>
+  
     <!--  Sidebar End -->
     <div class="body-wrapper">
         <!--  Header Start -->

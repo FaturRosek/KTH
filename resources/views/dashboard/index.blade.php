@@ -13,9 +13,9 @@
                             <th>Koordinat</th>
                             <th>Nama Ketua</th>
                             <th>No HP</th>
-                            <th>Nomor Tgl Rekening</th>
+                            <th>Nomor Tanggal Register</th>
                             <th>Status KTH</th>
-                            <th>Keterangan</th>
+                            <th>Keterangan Tidak Aktif</th>
                             <th>Tahun Tidak Aktif</th>
                             <th>Jenis Usaha</th>
                             <th>NIB</th>
@@ -41,17 +41,14 @@
                                 <td>{{ $k->koordinat }}</td>
                                 <td>{{ $k->nama_ketua }}</td>
                                 <td>{{ $k->no_hp }}</td>
-                                <td>{{ $k->nomor_tgl_rekening }}</td>
+                                <td>{{ $k->nomor_tgl_register }}</td>
                                 <td>{{ $k->status_kth }}</td>
                                 <td>{{ $k->keterangan }}</td>
                                 <td>{{ $k->tahun_tidak_aktif }}</td>
                                 <td>{{ $k->jenis_usaha }}</td>
                                 <td>{{ $k->NIB }}</td>
                                 <td>{{ $k->PIRT }}</td>
-                                <td>
-                                    <img src="{{ asset($k->sertifikat_halal) }}" class="img-thumbnail"
-                                        style="max-width: 50px; max-height: 50px;" alt="Img" />
-                                </td>
+                                <td>{{ $k->sertifikat_halal }}</td>
                                 <td>{{ $k->Merk_dagang }}</td>
                                 <td>{{ $k->Potensi_produksi }}</td>
                                 <td>{{ $k->NTE_perbulan }}</td>

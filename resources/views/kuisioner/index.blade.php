@@ -52,13 +52,13 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                 <label for="label" class="form-label">Nomer HP</label>
-                    <input type="text" name="no_hp" id="no_hp" class="form-control"
+                    <input type="number" name="no_hp" id="no_hp" class="form-control"
                     placeholder="No HP">
                 </div>
                 <div class="col-md-6">
-                    <label for="label" class="form-label">Nomer Tanggal Rekening</label>
-                    <input type="text" name="nomor_tgl_rekening" id="nomor_tgl_rekening" class="form-control"
-                    placeholder="Nomer Tanggal Rekening">
+                    <label for="label" class="form-label">Nomer Tanggal Register</label>
+                    <input type="date" name="nomor_tgl_register" id="nomor_tgl_register" class="form-control"
+                    placeholder="Nomer Tanggal Register">
                 </div>
             </div>
             <div class="row mb-3">
@@ -71,7 +71,7 @@
                     </select>
                 </div>                
                 <div class="col-md-6">
-                    <label for="" class="form-label">Keterangan</label>
+                    <label for="" class="form-label">Keterangan Tidak Aktif</label>
                     <input type="text" name="keterangan" id="keterangan" class="form-control"
                     placeholder="Keterangan">
                 </div>

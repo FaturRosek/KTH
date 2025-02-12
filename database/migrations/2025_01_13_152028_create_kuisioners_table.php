@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('koordinat', 255);
             $table->string('nama_ketua', 255); // nama ketua
             $table->string('no_hp'); // nomor hp
-            $table->string('nomor_tgl_rekening'); // nomor/tanggal registrasi
+            $table->string('nomor_tgl_register'); // nomor/tanggal registrasi
             $table->string('status_kth', 255); // status KTH
             $table->string('keterangan', 255)->nullable(); // keterangan (opsional)
             $table->string('tahun_tidak_aktif')->nullable(); // tahun tidak aktif (opsional)

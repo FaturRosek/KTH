@@ -17,7 +17,7 @@ class Kuisioner extends Model
         'koordinat',
         'nama_ketua',
         'no_hp',
-        'nomor_tgl_rekening',
+        'nomor_tgl_register',
         'status_kth',
         'keterangan',
         'tahun_tidak_aktif',
