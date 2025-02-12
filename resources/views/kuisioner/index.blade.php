@@ -1,8 +1,6 @@
 @extends('layout.app')
 
 @section('konten')
-<main id="main" class="main" style="margin-left: 250px; padding: 20px;">
-    <div class="container" style="margin-top: 50px">
         <form action="{{ route('kuisioner.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row mb-3">
@@ -154,8 +152,6 @@
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
         </form>
-    </div>
-</main>
 
 <script>
     document.getElementById("kelas_kth").addEventListener("change", function() {
