@@ -10,6 +10,7 @@ class Kuisioner extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
+        'nama_penyuluh',
         'nama_kth',
         'desa',
         'kecamatan',
@@ -22,7 +23,7 @@ class Kuisioner extends Model
         'keterangan',
         'tahun_tidak_aktif',
         'jenis_usaha',
-        'NIB',
+        'sk_pengukuhan',
         'PIRT',
         'sertifikat_halal',
         'Merk_dagang',

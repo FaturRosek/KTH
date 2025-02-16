@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('kuisioners', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('user_id')->nullable();
+            $table->string('nama_penyuluh', 255);
             $table->string('nama_kth', 255);
             $table->string('desa', 255); // desa
             $table->string('kecamatan', 255); // kecamatan
@@ -26,7 +27,7 @@ return new class extends Migration
             $table->string('keterangan', 255)->nullable(); // keterangan (opsional)
             $table->string('tahun_tidak_aktif')->nullable(); // tahun tidak aktif (opsional)
             $table->string('jenis_usaha', 255); // jenis usaha
-            $table->string('NIB', 255)->nullable(); // NIB (opsional)
+            $table->string('sk_pengukuhan', 255)->nullable(); // NIB (opsional)
             $table->string('PIRT', 255)->nullable(); // PIRT (opsional)
             $table->string('sertifikat_halal', 255)->nullable(); // sertifikat halal (opsional)
             $table->string('Merk_dagang', 255); // merk DGG

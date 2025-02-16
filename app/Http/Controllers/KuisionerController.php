@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kuisioner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class KuisionerController extends Controller
 {
@@ -17,6 +18,7 @@ class KuisionerController extends Controller
         // dd($request->all());
 
         $request->validate([
+            'nama_penyuluh' => 'required|max:255|string',
             'nama_kth' => 'required|max:255|string',
             'desa' => 'required|max:255|string',
             'kecamatan' => 'required|max:255|string',
@@ -29,7 +31,7 @@ class KuisionerController extends Controller
             'keterangan' => 'required|max:255|string',
             'tahun_tidak_aktif' => 'required|max:255|string',
             'jenis_usaha' => 'required|max:255|string',
-            'NIB' => 'required|max:255|string',
+            'sk_pengukuhan' => 'nullable|mimes:png,jpg,jpeg,pdf,word,webp|max:3048',
             'PIRT' => 'required|max:255|string',
             'sertifikat_halal' => 'nullable|mimes:png,jpg,jpeg,pdf,word,webp|max:3048',
             'Merk_dagang' => 'required|max:255|string',
@@ -52,8 +54,19 @@ class KuisionerController extends Controller
             $file->move($path, $filename);
         }
 
+        $filename = NULL;
+        $path = 'uploads/sk_pengukuhan/';
+
+        if ($request->hasFile('sk_pengukuhan')) {
+            $file = $request->file('sk_pengukuhan');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move($path, $filename);
+        }
+
         Kuisioner::create([
             'user_id' => Auth::id(),
+            'nama_penyuluh' => $request->nama_penyuluh,
             'nama_kth' => $request->nama_kth,
             'desa' => $request->desa,
             'kecamatan' => $request->kecamatan,
@@ -66,7 +79,7 @@ class KuisionerController extends Controller
             'keterangan' => $request->keterangan,
             'tahun_tidak_aktif' => $request->tahun_tidak_aktif,
             'jenis_usaha' => $request->jenis_usaha,
-            'NIB' => $request->NIB,
+            'sk_pengukuhan' => $filename ? $path . $filename : NULL,
             'PIRT' => $request->PIRT,
             'sertifikat_halal' => $filename ? $path . $filename : NULL,
             'Merk_dagang' => $request->Merk_dagang,
@@ -79,5 +92,18 @@ class KuisionerController extends Controller
         ]);
 
         return redirect()->route('dashboard.index')->with('status', 'Data Berhasil Ditambahkan');
+    }
+    public function destroy(string $id)
+    {
+        $kuisioner = Kuisioner::findOrFail($id);
+        if (File::exists($kuisioner->sertifikat_halal)) {
+            File::delete($kuisioner->sertifikat_halal);
+        }
+        if (File::exists($kuisioner->sk_pengukuhan)) {
+            File::delete($kuisioner->sk_pengukuhan);
+        }
+        $kuisioner->delete();
+
+        return redirect()->route('dashboard.index')->with('status', 'Data Berhasil di Hapus');
     }
 }

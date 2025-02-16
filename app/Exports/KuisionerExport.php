@@ -11,6 +11,7 @@ class KuisionerExport implements FromCollection, WithHeadings
     public function collection()
     {
         return Kuisioner::select(
+            'nama_penyuluh',
             'nama_kth',
             'desa',
             'kecamatan',
@@ -23,7 +24,7 @@ class KuisionerExport implements FromCollection, WithHeadings
             'keterangan',
             'tahun_tidak_aktif',
             'jenis_usaha',
-            'NIB',
+            'sk_pengukuhan',
             'PIRT',
             'sertifikat_halal',
             'Merk_dagang',
@@ -39,6 +40,7 @@ class KuisionerExport implements FromCollection, WithHeadings
     public function headings(): array
     {
         return [
+            'Nama Penyuluh',
             'Nama KTH',
             'Alamat - Desa',
             'Alamat - Kecamatan',
@@ -50,7 +52,7 @@ class KuisionerExport implements FromCollection, WithHeadings
             'Keterangan (Tidak aktif karena?)',
             'Tahun Terhitung Tidak Aktif?',
             'Jenis Usaha',
-            'Kelengkapan Perizinan Usaha - NIB',
+            'Kelengkapan Perizinan Usaha - SK Pengukuhan',
             'Kelengkapan Perizinan Usaha - PIRT',
             'Kelengkapan Perizinan Usaha - Sertifikat Halal',
             'Kelengkapan Perizinan Usaha - Merk Dagang (Sudah/Terdaftar)',
