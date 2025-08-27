@@ -28,6 +28,7 @@
                             <th>Kendala</th>
                             <th>Kebutuhan Pengembangan</th>
                             <th>Keterangan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,6 +60,13 @@
                                 <td>{{ $k->Kendala }}</td>
                                 <td>{{ $k->Kebutuhan_pengembangan }}</td>
                                 <td>{{ $k->ket }}</td>
+                                <td>
+                                    <form action="{{ route('kuisioner.destroy', $k->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -80,4 +80,14 @@ class KuisionerController extends Controller
 
         return redirect()->route('dashboard.index')->with('status', 'Data Berhasil Ditambahkan');
     }
+    public function destroy($id)
+    {
+        $kuisioner = Kuisioner::findOrFail($id);
+        // Jika ada file sertifikat_halal, hapus dari storage
+        if ($kuisioner->sertifikat_halal && file_exists(public_path($kuisioner->sertifikat_halal))) {
+            unlink(public_path($kuisioner->sertifikat_halal));
+        }
+        $kuisioner->delete();
+        return redirect()->route('dashboard.index')->with('status', 'Data berhasil dihapus');
+    }
 }

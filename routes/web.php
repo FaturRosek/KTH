@@ -19,18 +19,19 @@ use Maatwebsite\Excel\Facades\Excel;
 |
 */
 
+// Public landing page
+Route::get('/', function () {
+    return view('index');
+});
 
-
-
-Route::get('/', [LoginController::class, 'index']);
-// Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
-Route::resource('/dashboard', DashboardController::class);
-// Route::get('/kuisioner', [KuisionerController::class, 'index'])->name('kuisioner.index');
-Route::resource('/kuisioner', KuisionerController::class);
 Route::get('/login-form', [LoginController::class, 'index'])->name('login.index');
 Route::post('/login', [LoginController::class, 'login'])->name('admin.login');
-// Route::get('/logout', [LoginController::class, 'logout'])->name('admin.logout');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/export-kuisioner', function () {
     return Excel::download(new KuisionerExport, 'kuisioner.xlsx');
 })->name('export.kuisioner');
+
+// Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::resource('/dashboard', DashboardController::class);
+// Route::get('/kuisioner', [KuisionerController::class, 'index'])->name('kuisioner.index');
+Route::resource('/kuisioner', KuisionerController::class);

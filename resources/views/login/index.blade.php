@@ -16,7 +16,7 @@
         } */
 
         .bg-custom{
-            background-image: url('{{ asset ('assets/images/backgrounds/login.jpg')}}');
+            background-image: url('{{ asset('assets/images/backgrounds/login.jpg') }}');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
